@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subject List</title>
+
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // Subject List Component
+        function SubjectList() {
+
+            // Array of subjects
+            const subjects = [
+                "Mathematics",
+                "Java Programming",
+                "Data Structures",
+                "Operating Systems",
+                "Computer Networks"
+            ];
+
+            return (
+                <div>
+                    <h1>My Subject List</h1>
+
+                    <ul>
+                        {subjects.map((subject, index) => (
+                            <li key={index}>{subject}</li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        // Main Component
+        function App() {
+            return (
+                <div style={{
+                    textAlign: "center",
+                    fontFamily: "Arial"
+                }}>
+                    <SubjectList />
+                </div>
+            );
+        }
+
+        // Display output
+        ReactDOM.createRoot(
+            document.getElementById("root")
+        ).render(<App />);
+
+    </script>
+
+</body>
+</html>
